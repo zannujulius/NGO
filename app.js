@@ -6,7 +6,8 @@ const   express         = require('express'),
         ejs             = require('ejs'),
         // adminRoute      = require('./routes/admin')
         indexRoutes     = require('./routes/index'),
-        path            = require('path');
+        path            = require('path'),
+        adminRouter     = require('./routes/admin');
 
 app.set('view engine', 'ejs');
 mongoose.connect("mongodb://localhost:27017/Graham", {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
@@ -18,7 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(bodyParser.urlencoded({ extended: true}))
 
 app.use(indexRoutes)
-// app.use(adminRoutes)
+app.use('/admin', adminRouter)
 
 app.get('*', (req, res) => {
     res.status(404).send('<h1>Error page Not found<h1>')
