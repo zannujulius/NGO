@@ -1,0 +1,76 @@
+<%- include('./partials/header.ejs') %> 
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner">
+                  <div class="breadcrumb_iner_item text-center">
+                     <h2>blog details</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- breadcrumb start-->
+
+   <!--================Blog Area =================-->
+
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">
+         <div class="row justify-content-center">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+                  <h2 class="text-center"><%= blog.blogTitle %> 
+                  </h2>
+                  <hr>
+                  <div class="feature-img text-center">
+                     <img class="img-fluid w-50" src="<%= blog.blogImage %> " alt="">
+                  </div>
+                  <div class="blog_details">
+                   
+                     <!-- <ul class="blog-info-link mt-3 mb-4">
+                        <li><a href="#"><i class="far fa-user"></i> Travel, Lifestyle</a></li>
+                       
+                     </ul> -->
+                     <p class="excert">
+                        <%= blog.textOne %> 
+                     </p>
+                     <p class="excert">
+                        <%= blog.textTwo %> 
+                     </p>
+                     <!--
+                     <p>
+                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
+                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
+                        fraction of the camp price. However, who has the willpower
+                     </p>
+                     <p>
+                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
+                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
+                        fraction of the camp price. However, who has the willpower to actually sit through a
+                        self-imposed MCSE training. who has the willpower to actually
+                     </p> -->
+                  </div>
+               </div>
+
+               <div class="blog-author">
+                  <div class="media align-items-center">
+                     <img src="<%= blog.authorImage %> " alt="">
+                     <div class="media-body">
+                        <a href="#">
+                           <h4><%= blog.authorName %></h4>
+                        </a>
+                        <!-- <p>Second divided from form fish beast made. Every of seas all gathered use saying you're, he
+                           our dominion twon Second divided from</p> -->
+                     </div>
+                  </div>
+               </div>
+         </div>
+      </div>
+   </section>
+   <!--================Blog Area end =================-->
+
+<%- include('./partials/footer.ejs') %>
