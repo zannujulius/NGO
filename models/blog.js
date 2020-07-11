@@ -23,4 +23,4 @@ const Blog = mongoose.model('Blog', blogSchema)
 // }).catch(err => console.log(err))
 
 
-module.exports = mongoose.model('Blog', blogSchema);
+module.exports = Blog;
