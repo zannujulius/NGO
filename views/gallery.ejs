@@ -1,19 +1,6 @@
 <%- include('./partials/header.ejs') %> 
-    <!-- breadcrumb start-->
-    <section class="breadcrumb breadcrumb_bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb_iner">
-                        <div class="breadcrumb_iner_item text-center">
-                            <h2>Gallery</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- breadcrumb start-->
+
+<%- include('./partials/breadcumb.ejs') %>
 
 	<!-- Start Sample Area -->
 	<section class="sample-text-area">
@@ -22,9 +9,7 @@
 			<p class="sample-text">
 				Every avid independent filmmaker has <b>Bold</b> about making that <i>Italic</i> interest documentary,
 				or short
-				film to show off their creative prowess. Many have great ideas and want to “wow”
-				the<sup>Superscript</sup> scene,
-				or video renters with their big project. But once you have the<sub>Subscript</sub> “in the can” (no eas
+				
 			</p>
 		</div>
 	</section>
@@ -37,48 +22,26 @@
 	<div class="whole-wrap">
 		<div class="container box_1170">
 			<div class="section-top-border">
-				<h3>Image Gallery</h3>
+				<% if (currentUser) { %>
+					<a class="btn btn-warning text-white" href="/addimage"> Add Image</a>
+				<% } %>
 				<div class="row gallery-item">
-					<div class="col-md-4">
-						<a href="img/elements/g1.jpg" class="img-pop-up">
-							<div class="single-gallery-image" style="background: url(img/elements/g1.jpg);"></div>
-						</a>
-					</div>
-					<div class="col-md-4">
-						<a href="img/elements/g2.jpg" class="img-pop-up">
-							<div class="single-gallery-image" style="background: url(img/elements/g2.jpg);"></div>
-						</a>
-					</div>
-					<div class="col-md-4">
-						<a href="img/elements/g3.jpg" class="img-pop-up">
-							<div class="single-gallery-image" style="background: url(img/elements/g3.jpg);"></div>
-						</a>
-					</div>
-					<div class="col-md-6">
+
+					<% image.forEach(image => { %>
+						<div class="col-md-4">
+							<!-- <a href="uploads/<%= image.imageUrl %>" class="img-pop-up"> -->
+								<div class="single-gallery-image" style="background: url('/uploads/<%= image.imageUrl %>');"></div>
+							<!-- </a> -->
+							<h5><%= image.title %></h5>
+						</div>
+					<% }) %>
+					
+					<!-- <div class="col-md-6">
 						<a href="img/elements/g4.jpg" class="img-pop-up">
 							<div class="single-gallery-image" style="background: url(img/elements/g4.jpg);"></div>
 						</a>
-					</div>
-					<div class="col-md-6">
-						<a href="img/elements/g5.jpg" class="img-pop-up">
-							<div class="single-gallery-image" style="background: url(img/elements/g5.jpg);"></div>
-						</a>
-					</div>
-					<div class="col-md-4">
-						<a href="img/elements/g6.jpg" class="img-pop-up">
-							<div class="single-gallery-image" style="background: url(img/elements/g6.jpg);"></div>
-						</a>
-					</div>
-					<div class="col-md-4">
-						<a href="img/elements/g7.jpg" class="img-pop-up">
-							<div class="single-gallery-image" style="background: url(img/elements/g7.jpg);"></div>
-						</a>
-					</div>
-					<div class="col-md-4">
-						<a href="img/elements/g8.jpg" class="img-pop-up">
-							<div class="single-gallery-image" style="background: url(img/elements/g8.jpg);"></div>
-						</a>
-					</div>
+					</div>  -->
+				
 				</div>
 			</div>
 		</div>

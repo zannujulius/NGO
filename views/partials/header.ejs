@@ -54,36 +54,37 @@
                         <div class="collapse navbar-collapse main-menu-item justify-content-end"
                             id="navbarSupportedContent">
                             <ul class="navbar-nav align-items-center">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/about">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/causes">Causes</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/gallery">Gallery</a>
-                                </li>
-                
-                                <!-- <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="/blog" id="navbarDropdown"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Pages
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="team.html">team</a>
-                                        <a class="dropdown-item" href="/elements">Elements</a>
-                                    </div>
-                                </li> -->
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/blog">Blog</a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/contact">Contact</a>
-                                </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/about">About</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/causes">Causes</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/gallery">Gallery</a>
+                                    </li>  
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/blog">Blog</a>
+                                    </li>                                   
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/contact">Contact</a>
+                                    </li>  
+                                    <% if (currentUser){ %> 
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown"
+                                                role="button" data-toggle="dropdown" >
+                                                Profile
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <p class="dropdown-item text-lowercase"> <%= currentUser.username %></p>
+                                                <hr>
+                                                <a class="dropdown-item" href="/logout">Log out</a>
+                                            </div>
+                                        </li> 
+                                    <% } %>
                                
                             </ul>
                         </div>

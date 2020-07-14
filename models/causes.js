@@ -3,11 +3,14 @@ const mongoose = require('mongoose')
 const causeSchema = new mongoose.Schema({
     title: String,
     image: String,
-    description: String,
     goal: Number,
-    raise: Number
+    raise: Number,
+    name: String,
+    age: Number,
+    stateofOrigin: String,
+    text: String
 })
 
-const Cause = mongoose.model('Cause', causeSchema)
+const Causes = mongoose.model('Cause', causeSchema)
 
-module.exports = Cause;
+module.exports = Causes;

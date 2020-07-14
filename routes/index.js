@@ -1,9 +1,8 @@
-const blog = require('../models/blog');
-
 const   express = require('express'),
         router  = express.Router(),
-        Blog    = require('../models/blog');
-
+        Blog    = require('../models/blog'),
+        Causes  = require('../models/causes');
+   
 // index page routes 
 router.get('/', (req, res) => {
     res.render('index');
@@ -11,17 +10,30 @@ router.get('/', (req, res) => {
 
 //about routes
 router.get('/about', (req, res) => {
-    res.render('about');
+    res.render('about', {
+        header: 'Who we are and what we aim to achieve'
+    });
 });
 
 //contact route 
 router.get('/contact', (req, res) => {
-    res.render('contact')
+    res.render('contact', {
+        header: 'Contact'
+    })
 })
 
 //cause route
 router.get('/causes', (req, res) => {
-    res.render('causes')
+    Causes.find({}, (err, causes) => {
+        if(err){
+            console.log(err)
+        }else{
+            res.render('causes', {
+                header: ' Our causes',
+                causes: causes
+            })
+        }
+    })
 })
 
 //blog route 
@@ -29,7 +41,8 @@ router.get('/blog', (req, res) => {
    Blog.find()
    .then(blog => {
         res.render('blog', {
-            blog: blog
+            blog: blog,
+            header: 'Blog'
         });
    })
    .catch(err => console.log(err))
@@ -49,9 +62,6 @@ router.get('/blog/:id', (req, res) => {
     .catch(err => console.log(err))
 });
 
-// gallery routes
-router.get('/gallery', (req, res) => {
-    res.render('gallery')
-});
 
+ 
 module.exports = router;

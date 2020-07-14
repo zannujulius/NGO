@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Image</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+    .cover{
+        padding: 3%;
+        background-color:white;
+        position: relative;
+        top:100px;
+    }
+    @media (min-width: 1200px){
+        .container, .container-lg, .container-md, .container-sm, .container-xl {
+           
+            width: 400px !important;
+        }
+    }
+    .container{
+        border-radius: 6px;
+        /* width:90% !important; */
+    }
+    @media screen and  (max-width: 620px) {
+        .container{
+            width: 90%;
+        }
+    }
+    .col-lg-12, .col-md-12, .col-sm-12{
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }   
+    body{
+        background-image: linear-gradient(rgba(14, 14, 15, 0.452),rgba(21, 22, 22, 0.432)), url('https://images.unsplash.com/photo-1502790671504-542ad42d5189?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position:cover;
+        height: 100vh;
+        widows: 100vh;
+    }
+    </style>
+    </head>
+<body>
+    
+   <div class="container cover shadow ">
+       <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-10">
+            <form action="/addimage" method="POST" enctype="multipart/form-data">
+                <h3 class="text-center text-info">Add Image</h3>
+                <hr style="border-color:rgb(117, 127, 136)">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Image title</label>
+                  <input type="text" class="form-control" name="imageName" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                </div>
+               
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">Image upload</label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+                </div>
+
+                <button type="submit" class="btn btn-dark text-white">Submit</button>
+            </form>
+        </div>
+       </div>
+   </div>
+
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
